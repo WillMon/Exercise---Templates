@@ -13,8 +13,8 @@ void main()
 	Vector3<int> V3Tester1(23,-65,-41);
 	Vector3<int> V3Tester2(-45,52,47);
 	Vector3<int> V3Tester3(0,0,0);
-	Vector3<float> V3Tester4(1,2,0);
-	Vector3<float> V3Tester5(3,2,0);
+	Vector3<float> V3Tester4(1,2,1);
+	Vector3<float> V3Tester5(10,2,5);
 	Vector3<float> V3Tester6(0, 0, 0);
 
 	Vector2<float> V2Tester1(2,3);
@@ -64,7 +64,7 @@ void main()
 
 	std::cout << (V3Tester1 & V3Tester2) << std::endl;
 
-	std::cout << " Intrerplation: " << V3Tester6.XX << std::endl;
+	std::cout << " Intrerplation: " << V3Tester6.XX << "," << V3Tester6.ZZ<< "," << V3Tester6.ZZ << std::endl;
 
 	// Vector (2) Output Response
 	std::cout << "Vector (2) Output: " << std::endl;

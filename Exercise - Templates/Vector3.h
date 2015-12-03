@@ -47,9 +47,9 @@ public:
 	Vector3 <T> operator^(Vector3 <T> &UserInput)
 	{
 		Vector3 <T> TempVariable;
-		TempVariable.XX = YY*UserInput.ZZ - ZZ*UserInput.YY;
-		TempVariable.YY = ZZ*UserInput.XX - XX*UserInput.ZZ;
-		TempVariable.ZZ = XX*UserInput.YY - YY*UserInput.XX;
+		TempVariable.XX = (YY * UserInput.ZZ) - ZZ*UserInput.YY;
+		TempVariable.YY = (ZZ * UserInput.XX) - XX*UserInput.ZZ;
+		TempVariable.ZZ = (XX * UserInput.YY) - YY*UserInput.XX;
 		return TempVariable;
 	}
 
