@@ -1,5 +1,5 @@
 #ifndef _VECTOR2_H
-#define _Vector2_H_
+#define _VECTOR2_H_
 
 #include <iostream>
 
@@ -14,7 +14,8 @@ public:
 	Vector2();
 	Vector2(T, T);
 	T Magnitude();
-
+	Vector2<T> Radions();
+	Vector2<T> Degrees();
 	// V2 Addition 
 	Vector2<T> operator+(Vector2<T> &UserInput)
 	{
@@ -32,7 +33,7 @@ public:
 		return TempVariable;
 	}
 
-		// V2 Dot Product 
+	// V2 Dot Product 
 	T operator&(Vector2<T> &UserInput)
 	{
 		T total = 0;
@@ -57,7 +58,6 @@ public:
 		return TempVariable;
 	}
 
-	
 	// V2 Normalizer
 	Vector2<T> Vector2<T>::Normalizer()
 	{
@@ -66,6 +66,8 @@ public:
 		TempVariable.YY = YY / Magnitude();
 		return TempVariable;
 	}
+
+
 
 };
 // V2 Defualt Constructer
@@ -102,5 +104,23 @@ T Vector2<T>::Magnitude()
 	return Total;
 }
 
+// Converting for Raidions to Degrees
+template <typename T>
+Vector2<T> Vector2<T>::Radions()
+{
+	Vector2<T> TempVariable;
+	TempVariable.XX = 3.14 / 180 * XX;
+	TempVariable.YY = 3.14 / 180 * YY;
+	return TempVariable;
 
-#endif 
+}
+
+// Converting from Degress to Radions
+template <typename T>
+Vector2<T> Vector2<T>::Degrees() {
+	Vector2<T> TempVariable;
+	TempVariable.XX = 180 / 3.14 * XX;
+	TempVariable.YY = 180 / 3.14 * YY;
+	return TempVariable;
+}
+#endif

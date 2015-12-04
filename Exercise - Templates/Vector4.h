@@ -1,5 +1,5 @@
-#ifndef _VECTOR3_H_
-#define _VECTOR_H_
+#ifndef _VECTOR4_H_
+#define _VECTOR4_H_
 
 #include <iostream>
 #include <string>
@@ -14,7 +14,7 @@ public:
 	T BB;
 	T AA;
 	Vector4();
-	Vector4(T, T ,T ,T);
+	Vector4(T, T, T, T);
 	T Magnitude();
 	Vector4<T> Hexadecimal(string);
 	/* V4 Interpolation
@@ -58,7 +58,7 @@ template <typename T>
 T Vector4<T>::Magnitude()
 {
 	T Total;
-	T V4RR, V4GG,V4BB, V4AA;
+	T V4RR, V4GG, V4BB, V4AA;
 	V4RR = RR * RR;
 	V4GG = GG * GG;
 	V4BB = BB * BB;
@@ -75,9 +75,9 @@ Vector4<T> Vector4<T>::Hexadecimal(string UserInput)
 	Vector4<T> TempVariable;
 	if (UserInput[0] == '#')
 	{
-		int TempArray[6];
+		int TempArray[8];
 		Vector4<T> TempVariable;
-		for (int i = 1; i <= 6; ++i)
+		for (int i = 1; i <= 8; ++i)
 			TempArray[i - 1] = (int(UserInput[i]));
 
 		for (int j = 0; j < 6; ++j)
@@ -93,7 +93,8 @@ Vector4<T> Vector4<T>::Hexadecimal(string UserInput)
 		TempVariable.RR = (TempArray[0] * 16) + TempArray[1];
 		TempVariable.GG = (TempArray[2] * 16) + TempArray[3];
 		TempVariable.BB = (TempArray[4] * 16) + TempArray[5];
-		TempVariable.AA = 255;
+		TempVariable.AA = (TempArray[7] * 16) + TempArray[8];
+
 		return TempVariable;
 	}
 	else
@@ -103,20 +104,20 @@ Vector4<T> Vector4<T>::Hexadecimal(string UserInput)
 		TempVariable.BB = 00;
 		TempVariable.AA = 00;
 	}
-		
+
 }
 
-/* Not needed 
+/* Not needed
 template <typename T>
 Vector4<T> Vector4<T>::Interpolation()
 {
-	Vector4<T> TempVariable;
-	TempVariable.RR = RR + .5 * (RR - GG);
-	TempVariable.RR = GG + .5 * (GG - BB);
-	TempVariable.RR = BB + .5 * (BB - AA);
-	TempVariable.RR = AA + .5 * (AA - RR);
-	return TempVariable;
-	}*/
+Vector4<T> TempVariable;
+TempVariable.RR = RR + .5 * (RR - GG);
+TempVariable.RR = GG + .5 * (GG - BB);
+TempVariable.RR = BB + .5 * (BB - AA);
+TempVariable.RR = AA + .5 * (AA - RR);
+return TempVariable;
+}*/
 
 
 #endif
